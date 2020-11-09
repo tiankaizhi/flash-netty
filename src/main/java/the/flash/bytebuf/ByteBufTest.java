@@ -9,11 +9,11 @@ public class ByteBufTest {
 
         print("allocate ByteBuf(9, 100)", buffer);
 
-        // write 方法改变写指针，写完之后写指针未到 capacity 的时候，buffer 仍然可写
+        // write 方法改变写指针，写完之后写指针未到 capacity 的时候，buffer 仍然可写 (byte 占 1 个字节)
         buffer.writeBytes(new byte[]{1, 2, 3, 4});
         print("writeBytes(1,2,3,4)", buffer);
 
-        // write 方法改变写指针，写完之后写指针未到 capacity 的时候，buffer 仍然可写, 写完 int 类型之后，写指针增加4
+        // write 方法改变写指针，写完之后写指针未到 capacity 的时候，buffer 仍然可写, 写完 int 类型之后，写指针增加4 (int 类型占 4 个字节)
         buffer.writeInt(12);
         print("writeInt(12)", buffer);
 
