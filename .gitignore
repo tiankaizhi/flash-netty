@@ -108,3 +108,5 @@ fabric.properties
 blog/
 flash-netty.iml
 target/
+
+*.iml
