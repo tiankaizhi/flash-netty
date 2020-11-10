@@ -7,6 +7,9 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 
+/**
+ * @author tkz
+ */
 public class NettyServer {
 
     private static final int PORT = 8000;
@@ -23,6 +26,7 @@ public class NettyServer {
                 .childOption(ChannelOption.SO_KEEPALIVE, true)
                 .childOption(ChannelOption.TCP_NODELAY, true)
                 .childHandler(new ChannelInitializer<NioSocketChannel>() {
+                    @Override
                     protected void initChannel(NioSocketChannel ch) {
                         ch.pipeline().addLast(new FirstServerHandler());
                     }
