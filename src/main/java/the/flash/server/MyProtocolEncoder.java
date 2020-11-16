@@ -17,5 +17,6 @@ public class MyProtocolEncoder extends MessageToByteEncoder<MyProtocolBean> {
         out.writeByte(msg.getFlag());
         out.writeInt(msg.getLength());
         out.writeBytes(msg.getContent().getBytes(Charset.forName("UTF-8")));
+        System.out.println("send ...... a msg");
     }
 }

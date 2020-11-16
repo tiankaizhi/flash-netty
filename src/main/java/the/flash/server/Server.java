@@ -53,7 +53,7 @@ public class Server {
         if (args.length > 0) {
             port = Integer.parseInt(args[0]);
         } else {
-            port = 8080;
+            port = 8000;
         }
         new Server(port).start();
     }
